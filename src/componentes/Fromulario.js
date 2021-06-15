@@ -3,7 +3,7 @@ import { calcularTotal } from '../helpers';
 //todo lo que es interactivo usa el state, retorna dos valores
 
 const Formulario = (props) => {
-    const {cantidad, guardarCantidad, plazo, guardarPlazo, total, guardarTotal, cargando, guardarCargando} = props;
+    const {cantidad, guardarCantidad, plazo, guardarPlazo, guardarTotal, guardarCargando} = props;
     const [error, guardarError]= useState(false)
     
     const calcularPrestamoSubm = (e)=>{

@@ -5,6 +5,8 @@ import Mensaje from './componentes/Mensaje';
 import Resultado from './componentes/Resultado';
 import Spiner from './componentes/Spiner';
 
+/**Nota importante linea 61 */
+
 function App() {
   //Definir state
   const [cantidad, guardarCantidad] = useState(0);
@@ -41,7 +43,6 @@ function App() {
           guardarCantidad={guardarCantidad}
           plazo={plazo}
           guardarPlazo={guardarPlazo}
-          total={total}
           guardarTotal={guardarTotal}
           guardarCargando={guardarCargando}
         />
@@ -56,3 +57,11 @@ function App() {
 }
 
 export default App;
+
+/**Para deployar con ftp:
+ * hacer build --> ver doc
+ * y en la carpeta build que se crea
+ * en el index.html
+ * buscar los /statics y borrarles la barra / de adelante
+ * en 3 lugares
+ */
