@@ -1,28 +1,22 @@
 import React, { Fragment, useState } from 'react';
 import { calcularTotal } from '../helpers';
-//todo lo que es interactivo usa el state, retorna dos valores
 
 const Formulario = (props) => {
-    const {cantidad, guardarCantidad, plazo, guardarPlazo, total, guardarTotal, cargando, guardarCargando} = props;
+    const {cantidad, guardarCantidad, plazo, guardarPlazo, guardarTotal, guardarCargando} = props;
     const [error, guardarError]= useState(false)
     
     const calcularPrestamoSubm = (e)=>{
         e.preventDefault();
-        //Validar
         if(cantidad === 0 || plazo === ''){
             guardarError(true);
             return;
         }
         guardarError(false);
-
-        //habilita spinner
         guardarCargando(true);
 
         setTimeout(() => {
             let totalAPagar = calcularTotal(cantidad, plazo);
             guardarTotal(totalAPagar);
-
-            //deshabilita spinner
             guardarCargando(false);
         }, 3100);
     }
@@ -61,17 +55,8 @@ const Formulario = (props) => {
                     </div>
                 </div>
             </form>
-
             {(error) ?<p className="error"> Todos los campos son obligatorios</p> : null }
-            
-
         </Fragment>
     );
 }
-//ESTO ES LO MISMO QUE ESTA EN ONCHANGE e guardarCantidad
-   // const leerCantidad = (e)=>{
-    //     console.log(e.target.value);
-    //     guardarCantidad(parseInt(e.target.value))
-    // }
- 
 export default Formulario;

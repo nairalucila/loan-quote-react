@@ -1,9 +1,6 @@
-//Funciones reutilizables que se declaran en un archivo aparte para no cargar los componentes.
-
 export function calcularTotal(cantidad, plazo) {
     let totalCantidad;
     let totalPlazo = 0;
-    //Calcular cantidad
     if (cantidad <= 1000) {
         totalCantidad = cantidad * .25;
     } else if (cantidad > 1000 && cantidad <= 5000) {
@@ -14,7 +11,6 @@ export function calcularTotal(cantidad, plazo) {
         totalCantidad = cantidad * .10;
     }
 
-    //calcular plazo
     switch (plazo) {
         case 3:
             totalPlazo = cantidad * .05;
